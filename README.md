@@ -41,7 +41,8 @@ zainstalować niezbędne pakiety
     cd
     python3 -m venv ve
     . ve/bin/activate
-    pip install jupyter matplotlib pandas ipympl scipy pooch sympy
+    pip install --upgrade pip
+    pip install jupyter pandas matplotlib jupyter ipykernel
 
 Pobieramy to repozytorium
 
