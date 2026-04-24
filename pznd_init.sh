@@ -122,4 +122,29 @@ pznd_jupyter_tls() {
 
 export -f pznd_jupyter_tls
 
+# dump requirements
+pznd_requirements() {
+    pip freeze > requirements.txt
+}
+
+export -f pznd_requirements
+
+# audit requirements
+pznd_audit() {
+    pip install pip-audit -q
+    pip-audit -r requirements.txt
+}
+
+export -f pznd_audit
+
+# dump sbom file
+pznd_sbom() {
+    pip install cyclonedx-bom -q
+    cyclonedx-py environment > sbom.json
+}
+
+export -f pznd_sbom
+
 echo "✅ ready: run 'pznd_jupyter' or 'pznd_jupyter_tls your-password' to start"
+echo "          run 'pznd_requirements' or freeze environment or 'pznd_sbom' to generate sbom file"
+echo "          run 'pznd_audit' to audit the environment"

@@ -29,6 +29,30 @@ jeśli 8888 był niedostępny)
 
     pznd_jupyter_tls [hasło]
 
+### Analiza środowiska
+
+Plik `requirements.txt` zawiera listę bibliotek wraz z ich określonymi wersjami
+(*version pinning*), co zapewnia powtarzalność środowiska
+(*reproducible builds*). Można go wytworzyć uruchamiając
+
+    pznd_requirements
+
+Powtarzalność na poziomie komponentów systemu, wersji Python jest możliwa
+za pomocą konteneryzacji (np. `podman`, `docker`).
+
+Audyt środowiska w celu wykrycia podatności w zainstalowanych komponentach
+
+    pznd_audit
+
+Wytworzenie pliku pliku SBOM (*Software Bill of Materials*), który jest
+maszynowo przetwarzalnym spisem wszystkich komponentów, bibliotek i modułów
+w formacie CycloneDX
+
+    pznd_sbom
+
+Taki plik może służyć do zautomatyzowanego skanu bezpieczeństwa np. za
+pomocą [grype](https://github.com/anchore/grype).
+
 ## Przygotowanie środowiska
 
 Logujemy się na serwer przygotowany do zajęć z adresem `IP` oraz tworzymy tunel
