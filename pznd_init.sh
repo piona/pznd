@@ -146,5 +146,6 @@ pznd_sbom() {
 export -f pznd_sbom
 
 echo "✅ ready: run 'pznd_jupyter' or 'pznd_jupyter_tls your-password' to start"
-echo "          run 'pznd_requirements' or freeze environment or 'pznd_sbom' to generate sbom file"
+echo "          run 'pznd_requirements' or freeze the environment"
+echo "          run 'pznd_sbom' to generate the SBOM file"
 echo "          run 'pznd_audit' to audit the environment"
